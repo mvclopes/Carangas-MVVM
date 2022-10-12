@@ -14,40 +14,48 @@ final class CarFormViewController: UIViewController {
 	@IBOutlet weak var textFieldPrice: UITextField!
 	@IBOutlet weak var segmentedControlGasType: UISegmentedControl!
 	@IBOutlet weak var buttonSave: UIButton!
-	
-	var car: Car?
-	private let service = CarService()
+    
+    var viewModel: CarFormViewModel?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		if let car = car {
-			title = "Atualização"
-			textFieldBrand.text = car.brand
-			textFieldName.text = car.name
-			textFieldPrice.text = "\(car.price)"
-			segmentedControlGasType.selectedSegmentIndex = car.gasType
-			buttonSave.setTitle("Atualizar", for: .normal)
-		}
+        setupViewModel()
+        setupUI()
 	}
 	
 	@IBAction func save(_ sender: UIButton) {
-		let car = car ?? Car()
-		
-		car.name = textFieldName.text!
-		car.brand = textFieldBrand.text!
-		car.price = Int(textFieldPrice.text!) ?? 0
-		car.gasType = segmentedControlGasType.selectedSegmentIndex
-		
-		if car._id == nil {
-			service.createCar(car) { [weak self] result in
-				self?.showResult(result)
-			}
-		} else {
-			service.updateCar(car) { [weak self] result in
-				self?.showResult(result)
-			}
-		}
+        viewModel?.save(
+            name: textFieldName.text!,
+            brand: textFieldBrand.text!,
+            price: textFieldPrice.text!,
+            gasTypeIndex: segmentedControlGasType.selectedSegmentIndex
+        )
 	}
+    
+    private func setupViewModel() {
+        viewModel = viewModel ?? CarFormViewModel()
+        viewModel?.onCarCreated = onCarCreated
+        viewModel?.onCarUpdated = onCarUpdated
+    }
+    
+    private func setupUI() {
+        title = viewModel?.title
+        textFieldBrand.text = viewModel?.brand
+        textFieldName.text = viewModel?.name
+        textFieldPrice.text = viewModel?.price
+        segmentedControlGasType.selectedSegmentIndex = viewModel?.gasType ?? 0
+        buttonSave.setTitle(viewModel?.buttonTitle, for: .normal)
+    }
+    
+    private func onCarCreated(result: Result<Void, CarServiceError>) {
+        print("Carro criado")
+        showResult(result)
+    }
+    
+    private func onCarUpdated(result: Result<Void, CarServiceError>) {
+        print("Carro atualizado")
+        showResult(result)
+    }
 	
 	private func showResult(_ result: Result<Void, CarServiceError>) {
 		switch result {

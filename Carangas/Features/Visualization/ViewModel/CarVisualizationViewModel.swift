@@ -28,4 +28,8 @@ final class CarVisualizationViewModel {
     init(car: Car) {
         self.car = car
     }
+    
+    func getCarFormViewModel() -> CarFormViewModel {
+        CarFormViewModel(car: car)
+    }
 }
