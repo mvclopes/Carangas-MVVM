@@ -17,7 +17,7 @@ final class CarFormViewModel {
     var title: String { isEditing ? "Atualização" : "Cadastro" }
     var brand: String { car.brand }
     var name: String { car.name }
-    var price: String { "R$ \(car.price),00" }
+    var price: String { "\(car.price)" }
     var gasType: Int { car.gasType }
     var buttonTitle: String { isEditing ? "Atualizar" : "Cadastrar" }
     
