@@ -13,20 +13,20 @@ final class CarViewController: UIViewController {
 	@IBOutlet weak var labelGasType: UILabel!
 	@IBOutlet weak var labelPrice: UILabel!
 	
-	var car: Car?
+    var viewModel: CarVisualizationViewModel?
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		if let car = car {
-			title = car.name
-			labelBrand.text = "Marca: \(car.brand)"
-			labelGasType.text = "Combustível: \(car.fuel)"
-			labelPrice.text = "Preço: R$ \(car.price),00"
+        if let viewModel = viewModel {            
+            title = viewModel.title
+            labelBrand.text = viewModel.brand
+            labelGasType.text = viewModel.fuel
+            labelPrice.text = viewModel.price
 		}
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		guard let vc = segue.destination as? CarFormViewController else { return }
-		vc.car = car
+//		vc.car = car
 	}
 }

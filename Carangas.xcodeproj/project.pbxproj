@@ -24,6 +24,7 @@
 		AC088B8B28F629FD00ABD095 /* CarsListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC088B8A28F629FD00ABD095 /* CarsListingViewModel.swift */; };
 		AC088B8E28F62F5F00ABD095 /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC088B8D28F62F5F00ABD095 /* CarTableViewCell.swift */; };
 		AC088B9028F6306400ABD095 /* CarCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC088B8F28F6306400ABD095 /* CarCellViewModel.swift */; };
+		AC088B9228F63BB200ABD095 /* CarVisualizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC088B9128F63BB200ABD095 /* CarVisualizationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		AC088B8A28F629FD00ABD095 /* CarsListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListingViewModel.swift; sourceTree = "<group>"; };
 		AC088B8D28F62F5F00ABD095 /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
 		AC088B8F28F6306400ABD095 /* CarCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCellViewModel.swift; sourceTree = "<group>"; };
+		AC088B9128F63BB200ABD095 /* CarVisualizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarVisualizationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 		AC088B8228F625C900ABD095 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				AC088B9128F63BB200ABD095 /* CarVisualizationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 			files = (
 				5C1A67A628626F4700366E5E /* CarsTableViewController.swift in Sources */,
 				5C915A0528628D6400A0BD83 /* CarServiceError.swift in Sources */,
+				AC088B9228F63BB200ABD095 /* CarVisualizationViewModel.swift in Sources */,
 				5C1A679628626EF600366E5E /* CarViewController.swift in Sources */,
 				5C915A0328627FB400A0BD83 /* CarService.swift in Sources */,
 				AC088B8E28F62F5F00ABD095 /* CarTableViewCell.swift in Sources */,

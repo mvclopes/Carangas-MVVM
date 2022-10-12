@@ -26,10 +26,10 @@ final class CarsTableViewController: UITableViewController {
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		guard let vc = segue.destination as? CarViewController,
-			  let row = tableView.indexPathForSelectedRow?.row else { return }
+		guard let carViewController = segue.destination as? CarViewController,
+			  let indexPath = tableView.indexPathForSelectedRow else { return }
 		
-//		vc.car = cars[row]
+        carViewController.viewModel = viewModel.getCarVisualizationViewModel(at: indexPath)
 	}
 	
 	private func loadCars() {
