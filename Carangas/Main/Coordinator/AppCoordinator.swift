@@ -19,7 +19,10 @@ final class AppCoordinator: Coordinator {
     }
     
     func start() {
-        <#code#>
+        let childCoordinator = CarsListingCoordinator(navigationController: navigationController)
+        add(childCoordinator: childCoordinator)
+        childCoordinator.parentCoordinator = self
+        childCoordinator.start()
     }
     
     
