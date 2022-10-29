@@ -33,7 +33,6 @@ final class CarFormViewController: UIViewController {
 	}
     
     private func setupViewModel() {
-        viewModel = viewModel ?? CarFormViewModel()
         viewModel?.onCarCreated = onCarCreated
         viewModel?.onCarUpdated = onCarUpdated
     }

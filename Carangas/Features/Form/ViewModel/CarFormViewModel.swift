@@ -24,7 +24,9 @@ final class CarFormViewModel {
     var onCarCreated: ((Result<Void, CarServiceError>) -> Void)?
     var onCarUpdated: ((Result<Void, CarServiceError>) -> Void)?
     
-    init(car: Car? = nil) {
+    private weak var coordinator: CarFormCoordinator?
+    
+    init(car: Car? = nil, coordinator: CarFormCoordinator) {
         self.car = car ?? Car()
     }
     
