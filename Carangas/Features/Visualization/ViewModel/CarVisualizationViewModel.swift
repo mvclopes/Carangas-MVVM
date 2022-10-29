@@ -25,11 +25,10 @@ final class CarVisualizationViewModel {
         return "Preço: \(price)"
     }
     
-    init(car: Car) {
-        self.car = car
-    }
+    weak var coordinator: CarVisualizationCoordinator?
     
-    func getCarFormViewModel() -> CarFormViewModel {
-        CarFormViewModel(car: car)
+    init(car: Car, coordinator: CarVisualizationCoordinator) {
+        self.car = car
+        self.coordinator = coordinator
     }
 }
