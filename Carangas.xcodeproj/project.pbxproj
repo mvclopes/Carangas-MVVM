@@ -25,6 +25,8 @@
 		AC088B9028F6306400ABD095 /* CarCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC088B8F28F6306400ABD095 /* CarCellViewModel.swift */; };
 		AC088B9228F63BB200ABD095 /* CarVisualizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC088B9128F63BB200ABD095 /* CarVisualizationViewModel.swift */; };
 		AC088B9428F6405F00ABD095 /* CarFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC088B9328F6405F00ABD095 /* CarFormViewModel.swift */; };
+		AC2040B9290D4E3400D52A18 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2040B8290D4E3400D52A18 /* Coordinator.swift */; };
+		AC2040BC290D520800D52A18 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2040BB290D520800D52A18 /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		AC088B8F28F6306400ABD095 /* CarCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCellViewModel.swift; sourceTree = "<group>"; };
 		AC088B9128F63BB200ABD095 /* CarVisualizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarVisualizationViewModel.swift; sourceTree = "<group>"; };
 		AC088B9328F6405F00ABD095 /* CarFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarFormViewModel.swift; sourceTree = "<group>"; };
+		AC2040B8290D4E3400D52A18 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		AC2040BB290D520800D52A18 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 				5C1A679128626EF600366E5E /* AppDelegate.swift */,
 				5C1A679328626EF600366E5E /* SceneDelegate.swift */,
 				5C9159F72862754100A0BD83 /* View */,
+				AC2040BA290D51ED00D52A18 /* Coordinator */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 		5C9159FD28627D6500A0BD83 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				AC2040B7290D4E1D00D52A18 /* Protocols */,
 				5C915A0128627F9C00A0BD83 /* Services */,
 				5C9159FE28627D7600A0BD83 /* Model */,
 			);
@@ -247,6 +253,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		AC2040B7290D4E1D00D52A18 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				AC2040B8290D4E3400D52A18 /* Coordinator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		AC2040BA290D51ED00D52A18 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				AC2040BB290D520800D52A18 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -326,11 +348,13 @@
 				5C1A679628626EF600366E5E /* CarViewController.swift in Sources */,
 				5C915A0328627FB400A0BD83 /* CarService.swift in Sources */,
 				AC088B8E28F62F5F00ABD095 /* CarTableViewCell.swift in Sources */,
+				AC2040B9290D4E3400D52A18 /* Coordinator.swift in Sources */,
 				AC088B8B28F629FD00ABD095 /* CarsListingViewModel.swift in Sources */,
 				AC088B9028F6306400ABD095 /* CarCellViewModel.swift in Sources */,
 				AC088B9428F6405F00ABD095 /* CarFormViewModel.swift in Sources */,
 				5C915A0028627D9300A0BD83 /* Car.swift in Sources */,
 				5C1A67A828626F8E00366E5E /* CarFormViewController.swift in Sources */,
+				AC2040BC290D520800D52A18 /* AppCoordinator.swift in Sources */,
 				5C1A679228626EF600366E5E /* AppDelegate.swift in Sources */,
 				5C1A679428626EF600366E5E /* SceneDelegate.swift in Sources */,
 			);
