@@ -27,6 +27,7 @@
 		AC088B9428F6405F00ABD095 /* CarFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC088B9328F6405F00ABD095 /* CarFormViewModel.swift */; };
 		AC2040B9290D4E3400D52A18 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2040B8290D4E3400D52A18 /* Coordinator.swift */; };
 		AC2040BC290D520800D52A18 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2040BB290D520800D52A18 /* AppCoordinator.swift */; };
+		AC2040BF290D54BD00D52A18 /* UiViewController+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2040BE290D54BD00D52A18 /* UiViewController+Instantiate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		AC088B9328F6405F00ABD095 /* CarFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarFormViewModel.swift; sourceTree = "<group>"; };
 		AC2040B8290D4E3400D52A18 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		AC2040BB290D520800D52A18 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		AC2040BE290D54BD00D52A18 /* UiViewController+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController+Instantiate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +275,7 @@
 		AC2040BD290D546E00D52A18 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AC2040BE290D54BD00D52A18 /* UiViewController+Instantiate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				5C915A0028627D9300A0BD83 /* Car.swift in Sources */,
 				5C1A67A828626F8E00366E5E /* CarFormViewController.swift in Sources */,
 				AC2040BC290D520800D52A18 /* AppCoordinator.swift in Sources */,
+				AC2040BF290D54BD00D52A18 /* UiViewController+Instantiate.swift in Sources */,
 				5C1A679228626EF600366E5E /* AppDelegate.swift in Sources */,
 				5C1A679428626EF600366E5E /* SceneDelegate.swift in Sources */,
 			);
