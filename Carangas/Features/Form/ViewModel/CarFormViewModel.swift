@@ -28,6 +28,12 @@ final class CarFormViewModel {
     
     init(car: Car? = nil, coordinator: CarFormCoordinator) {
         self.car = car ?? Car()
+        self.coordinator = coordinator
+    }
+    
+    deinit {
+        print("CarFormViewModel deinit")
+        coordinator?.childDidFinish(nil)
     }
     
     func save(name: String, brand: String, price: String, gasTypeIndex: Int) {
@@ -45,5 +51,9 @@ final class CarFormViewModel {
                 self?.onCarCreated?(result)
             }
         }
+    }
+    
+    func back() {
+        coordinator?.back()
     }
 }

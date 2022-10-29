@@ -46,21 +46,21 @@ final class CarFormViewController: UIViewController {
         buttonSave.setTitle(viewModel?.buttonTitle, for: .normal)
     }
     
-    private func onCarCreated(result: Result<Void, CarServiceError>) {
+    lazy var onCarCreated: (Result<Void, CarServiceError>) -> () = { [weak self] in
         print("Carro criado")
-        showResult(result)
+        self?.showResult($0)
     }
     
-    private func onCarUpdated(result: Result<Void, CarServiceError>) {
+    lazy var onCarUpdated: (Result<Void, CarServiceError>) -> () = { [weak self] result in
         print("Carro atualizado")
-        showResult(result)
+        self?.showResult(result)
     }
 	
 	private func showResult(_ result: Result<Void, CarServiceError>) {
 		switch result {
 		case .success:
 			DispatchQueue.main.async {
-				self.navigationController?.popViewController(animated: true)
+                self.viewModel?.back()
 			}
 		case .failure(let apiError):
 			print(apiError.errorMessage)

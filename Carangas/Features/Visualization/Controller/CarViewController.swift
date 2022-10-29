@@ -23,5 +23,9 @@ final class CarViewController: UIViewController {
             labelGasType.text = viewModel.fuel
             labelPrice.text = viewModel.price
 		}
-	}
+	}    
+  
+    @IBAction func edit(_ sender: UIBarButtonItem) {
+        viewModel?.edit()
+    }
 }

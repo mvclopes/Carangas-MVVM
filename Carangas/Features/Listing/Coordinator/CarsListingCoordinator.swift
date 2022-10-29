@@ -9,9 +9,7 @@ import UIKit
 
 final class CarsListingCoordinator: Coordinator {
     var navigationController: UINavigationController
-    
     var childCoordinators: [Coordinator] = []
-    
     var parentCoordinator: Coordinator?
     
     init(navigationController: UINavigationController) {
@@ -25,10 +23,16 @@ final class CarsListingCoordinator: Coordinator {
     }
     
     func showCar(_ car: Car) {
-        print("Carro: \(car.name)")
+        let childCoordinator = CarVisualizationCoordinator(navigationController: navigationController, car: car)
+        add(childCoordinator: childCoordinator)
+        childCoordinator.parentCoordinator = self
+        childCoordinator.start()
     }
     
     func showCarCreation() {
-        print("Criando carro")
+        let childCoordinator = CarFormCoordinator(navigationController: navigationController)
+        add(childCoordinator: childCoordinator)
+        childCoordinator.parentCoordinator = self
+        childCoordinator.start()
     }
 }
