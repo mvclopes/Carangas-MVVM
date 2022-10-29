@@ -24,14 +24,7 @@ final class CarsTableViewController: UITableViewController {
 		super.viewWillAppear(animated)
 		loadCars()
 	}
-	
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		guard let carViewController = segue.destination as? CarViewController,
-			  let indexPath = tableView.indexPathForSelectedRow else { return }
 		
-        carViewController.viewModel = viewModel?.getCarVisualizationViewModel(at: indexPath)
-	}
-	
 	private func loadCars() {
         viewModel?.loadCars { [weak self] result in
             switch result {
@@ -44,7 +37,12 @@ final class CarsTableViewController: UITableViewController {
             }
         }
 	}
-	
+    
+    
+    @IBAction func createCar(_ sender: UIBarButtonItem) {
+        viewModel?.showCarCreation()
+    }
+    
 	// MARK: - Table view data source
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = viewModel?.numberOfRows ?? 0
@@ -71,4 +69,8 @@ final class CarsTableViewController: UITableViewController {
             }
 		}
 	}
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel?.showCarAt(indexPath)
+    }
 }

@@ -48,7 +48,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Carangas" id="iJm-8J-5x3">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="11Q-dD-sEU"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="11Q-dD-sEU">
+                            <connections>
+                                <action selector="createCar:" destination="fCq-nf-ZUh" id="vVL-yY-Pmk"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>

@@ -5,7 +5,6 @@
 //  Created by Matheus Lopes on 29/10/22.
 //
 
-import Foundation
 import UIKit
 
 final class CarsListingCoordinator: Coordinator {
@@ -25,5 +24,11 @@ final class CarsListingCoordinator: Coordinator {
         navigationController.pushViewController(viewController, animated: false)
     }
     
+    func showCar(_ car: Car) {
+        print("Carro: \(car.name)")
+    }
     
+    func showCarCreation() {
+        print("Criando carro")
+    }
 }
