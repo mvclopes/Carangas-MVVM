@@ -17,7 +17,7 @@ final class CarsTableViewController: UITableViewController {
 		label.font = UIFont.italicSystemFont(ofSize: 16.0)
 		return label
 	}()
-    var viewModel = CarsListingViewModel()
+    var viewModel: CarsListingViewModel?
 	
 	// MARK: - Super Methods
 	override func viewWillAppear(_ animated: Bool) {
@@ -29,11 +29,11 @@ final class CarsTableViewController: UITableViewController {
 		guard let carViewController = segue.destination as? CarViewController,
 			  let indexPath = tableView.indexPathForSelectedRow else { return }
 		
-        carViewController.viewModel = viewModel.getCarVisualizationViewModel(at: indexPath)
+        carViewController.viewModel = viewModel?.getCarVisualizationViewModel(at: indexPath)
 	}
 	
 	private func loadCars() {
-        viewModel.loadCars { [weak self] result in
+        viewModel?.loadCars { [weak self] result in
             switch result {
             case .success:
                 DispatchQueue.main.async { self?.tableView.reloadData() }
@@ -47,20 +47,21 @@ final class CarsTableViewController: UITableViewController {
 	
 	// MARK: - Table view data source
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = viewModel.numberOfRows
+        let count = viewModel?.numberOfRows ?? 0
 		tableView.backgroundView = count == 0 ? label : nil
 		return count
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CarTableViewCell else {  return UITableViewCell() }
-        cell.configure(with: viewModel.cellViewModelFor(indexPath))
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CarTableViewCell,
+              let cellViewModelFor = viewModel?.cellViewModelFor(indexPath) else {  return UITableViewCell() }
+        cell.configure(with: cellViewModelFor)
 		return cell
 	}
 	
 	override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 		if editingStyle == .delete {
-            viewModel.deleteCar(at: indexPath) { [weak self] result in
+            viewModel?.deleteCar(at: indexPath) { [weak self] result in
                 switch result {
                 case .success:
                     DispatchQueue.main.async { self?.tableView.deleteRows(at: [indexPath], with: .automatic)}

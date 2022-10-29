@@ -21,6 +21,7 @@ final class CarsListingCoordinator: Coordinator {
     
     func start() {
         let viewController = CarsTableViewController.instantiateFrom(storyboard: .listing)
+        viewController.viewModel = CarsListingViewModel(coordinator: self)
         navigationController.pushViewController(viewController, animated: false)
     }
     
